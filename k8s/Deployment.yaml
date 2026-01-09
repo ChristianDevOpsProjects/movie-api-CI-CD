@@ -1,0 +1,20 @@
+# k8s/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movie-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: movie-api
+  template:
+    metadata:
+      labels:
+        app: movie-api
+    spec:
+      containers:
+      - name: movie-api
+        image: ghcr.io/<username>/movie-api:latest
+        ports:
+        - containerPort: 8000
