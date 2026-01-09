@@ -86,15 +86,6 @@ Demonstrates scaling and deployment best practices
 
 Beginner-friendly yet practical and impressive for recruiters
 
-👨‍💻 Next Steps / Extensions
-
-Add a database (e.g., PostgreSQL) for dynamic data
-
-Integrate Redis caching
-
-Add Prometheus/Grafana monitoring
-
-Build a small frontend to display movies
 
 📌 References
 
