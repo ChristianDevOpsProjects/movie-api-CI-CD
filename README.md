@@ -1,32 +1,9 @@
-# 🎬 Movie API – Docker + Kubernetes + CI/CD
+🎬 Movie API – Docker + Kubernetes + CI/CD
 
-A **scalable, production-ready API** built with FastAPI, Docker, and Kubernetes, featuring GitHub Actions CI/CD.  
-This project demonstrates **containerization, deployment, auto-scaling, and pipeline automation** — perfect for showcasing cloud-native skills to recruiters.
+A simple FastAPI-based movie API designed to demonstrate containerization, Kubernetes deployment, auto-scaling, and CI/CD with GitHub Actions.
+This project is beginner-friendly, but still shows production-ready practices.
 
----
-
-## 🚀 Features
-
-- **FastAPI API** serving movie data
-- **Dockerized** for easy container deployment
-- **Kubernetes Deployment** with multiple pods
-- **Horizontal Pod Autoscaler** for scaling based on CPU
-- **CI/CD Pipeline** using GitHub Actions
-- Beginner-friendly, fully functional pipeline
-
----
-
-## 🏗 Tech Stack
-
-- **API:** Python, FastAPI
-- **Containerization:** Docker
-- **Orchestration:** Kubernetes
-- **CI/CD:** GitHub Actions
-- **Optional Local Kubernetes:** [k3d](https://k3d.io/) or [kind](https://kind.sigs.k8s.io/)
-
----
-
-## 🗂 Project Structure
+🗂 Project Structure
 movie-api/
 ├── app/
 │   ├── main.py
@@ -41,35 +18,90 @@ movie-api/
 │       └── ci-cd.yaml
 └── README.md
 
-yaml
-Copy code
+⚡ Features
 
----
+FastAPI API serving a list of movies
 
-## ⚡ Quick Start
+Dockerized for easy deployment
 
-### 1. Run Locally with Docker
+Kubernetes Deployment with multiple pods
 
-```bash
+Horizontal Pod Autoscaler for auto-scaling
+
+CI/CD Pipeline with GitHub Actions
+
+🏗 Tech Stack
+
+API: Python, FastAPI
+
+Containerization: Docker
+
+Orchestration: Kubernetes
+
+CI/CD: GitHub Actions
+
+Optional: Run Kubernetes locally with k3d
+ or kind
+.
+
+🚀 Getting Started
+1. Run Locally with Docker
+# Build the Docker image
 docker build -t movie-api:latest ./app
+
+# Run the container
 docker run -p 8000:8000 movie-api:latest
-Visit http://localhost:8000/movies to see the API.
+
+
+Visit http://localhost:8000/movies
+ to see the API in action.
 
 2. Deploy to Kubernetes
-bash
-Copy code
 kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
 kubectl apply -f k8s/hpa.yaml
-Deployment runs 2 pods by default
 
-Horizontal Pod Autoscaler will scale pods automatically under load
+
+Starts 2 pods by default
+
+Auto-scales up to 5 pods if CPU usage exceeds 50%
 
 3. CI/CD with GitHub Actions
-Push any changes to main branch → GitHub Actions will:
 
-Build and test the app
+Push changes to the main branch:
 
-Build and push the Docker image to GitHub Container Registry
+GitHub Actions builds and tests the API
 
-Deploy the latest version to your Kubernetes cluster
+Docker image is built and pushed to GitHub Container Registry
+
+Kubernetes deployment is updated automatically
+
+This makes your API production-ready with minimal effort.
+
+🎯 Why This Project Stands Out
+
+Shows modern DevOps skills in a simple project
+
+Demonstrates scaling and deployment best practices
+
+Beginner-friendly yet practical and impressive for recruiters
+
+👨‍💻 Next Steps / Extensions
+
+Add a database (e.g., PostgreSQL) for dynamic data
+
+Integrate Redis caching
+
+Add Prometheus/Grafana monitoring
+
+Build a small frontend to display movies
+
+📌 References
+
+FastAPI Docs
+
+Docker Docs
+
+Kubernetes Docs
+
+GitHub Actions Docs
