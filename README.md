@@ -27,19 +27,18 @@ This project demonstrates **containerization, deployment, auto-scaling, and pipe
 ---
 
 ## 🗂 Project Structure
-
 movie-api/
 ├── app/
-│ ├── main.py
-│ ├── requirements.txt
-│ └── Dockerfile
+│   ├── main.py
+│   ├── requirements.txt
+│   └── Dockerfile
 ├── k8s/
-│ ├── deployment.yaml
-│ ├── service.yaml
-│ └── hpa.yaml
+│   ├── deployment.yaml
+│   ├── service.yaml
+│   └── hpa.yaml
 ├── .github/
-│ └── workflows/
-│ └── ci-cd.yaml
+│   └── workflows/
+│       └── ci-cd.yaml
 └── README.md
 
 yaml
