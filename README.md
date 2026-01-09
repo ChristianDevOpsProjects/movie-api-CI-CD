@@ -1,22 +1,8 @@
 🎬 Movie API – Docker + Kubernetes + CI/CD
 
-A simple FastAPI-based movie API designed to demonstrate containerization, Kubernetes deployment, auto-scaling, and CI/CD with GitHub Actions.
-This project is beginner-friendly, but still shows production-ready practices.
+A simple FastAPI-based movie API designed to show how to build and deploy a scalable service using Docker, Kubernetes, and GitHub Actions CI/CD.
 
-🗂 Project Structure
-movie-api/
-├── app/
-│   ├── main.py
-│   ├── requirements.txt
-│   └── Dockerfile
-├── k8s/
-│   ├── deployment.yaml
-│   ├── service.yaml
-│   └── hpa.yaml
-├── .github/
-│   └── workflows/
-│       └── ci-cd.yaml
-└── README.md
+It’s beginner-friendly but still demonstrates production-ready skills like containerization, auto-scaling, and automated deployment.
 
 ⚡ Features
 
@@ -40,12 +26,12 @@ Orchestration: Kubernetes
 
 CI/CD: GitHub Actions
 
-Optional: Run Kubernetes locally with k3d
+You can also run this locally on Kubernetes using k3d
  or kind
 .
 
 🚀 Getting Started
-1. Run Locally with Docker
+Run Locally with Docker
 # Build the Docker image
 docker build -t movie-api:latest ./app
 
@@ -53,46 +39,29 @@ docker build -t movie-api:latest ./app
 docker run -p 8000:8000 movie-api:latest
 
 
-Visit http://localhost:8000/movies
- to see the API in action.
+Open http://localhost:8000/movies
+ in your browser to see the API in action.
 
-2. Deploy to Kubernetes
+Deploy to Kubernetes
 kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
 kubectl apply -f k8s/hpa.yaml
 
 
-Starts 2 pods by default
+Starts with 2 pods by default
 
-Auto-scales up to 5 pods if CPU usage exceeds 50%
+Auto-scales up to 5 pods if CPU usage goes above 50%
 
-3. CI/CD with GitHub Actions
+This shows how your app can handle more load automatically, just like in a real production environment.
 
-Push changes to the main branch:
+CI/CD with GitHub Actions
 
-GitHub Actions builds and tests the API
+Push changes to the main branch, and GitHub Actions will:
 
-Docker image is built and pushed to GitHub Container Registry
+Build and test your API
 
-Kubernetes deployment is updated automatically
+Build and push a Docker image to GitHub Container Registry
 
-This makes your API production-ready with minimal effort.
+Deploy the updated app to your Kubernetes cluster
 
-🎯 Why This Project Stands Out
-
-Shows modern DevOps skills in a simple project
-
-Demonstrates scaling and deployment best practices
-
-Beginner-friendly yet practical and impressive for recruiters
-
-
-📌 References
-
-FastAPI Docs
-
-Docker Docs
-
-Kubernetes Docs
-
-GitHub Actions Docs
+This setup demonstrates modern DevOps practices in a simple, easy-to-understand way.
